@@ -10,29 +10,35 @@ struct EMP{
 int main () {
     EMP EMPLEADOS[100];
     int n;
+    cout<<"Ingrese la cantidad de empleados: ";
     cin>>n;
     for (int i=0; i<n; i++) {
+        cout<<"Numero de empleado: ";
         cin>>EMPLEADOS[i].num;
         cin.ignore();
+        cout<<"Nombre del empleado: ";
         getline(cin, EMPLEADOS[i].nom);
         for (int j=0; j<12; j++) {
+            cout<<"Venta del mes "<<j+1<<": ";
             cin>>EMPLEADOS[i].ven[j];
         }
+        cout<<"Salario base: ";
         cin>>EMPLEADOS[i].sal;
     }
 
+    cout<<"\nINFORMACION DE EMPLEADOS:\n";
     for (int i=0; i<n; i++) {
         float totalVentas = 0;
         for (int j=0; j<12; j++) {
             totalVentas += EMPLEADOS[i].ven[j];
         }
-        cout<<EMPLEADOS[i].nom<<endl;
+        cout<<"Empleado: "<<EMPLEADOS[i].nom<<endl;
+        cout<<"Ventas mensuales: ";
         for (int j=0; j<12; j++) {
             cout<<EMPLEADOS[i].ven[j]<<" ";
         }
-        cout<<endl;
-        cout<<totalVentas<<endl;
-        cout<<EMPLEADOS[i].sal<<endl;
+        cout<<"\nTotal ventas: "<<totalVentas<<endl;
+        cout<<"Salario recibido: "<<EMPLEADOS[i].sal<<endl;
     }
 
     return 0;
