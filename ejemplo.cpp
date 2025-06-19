@@ -52,10 +52,18 @@ int main () {
         cout<<"\nTotal ventas: "<<totalVentas<<endl;
         cout<<"Salario recibido: "<<EMPLEADOS[i].sal<<endl;
     }
-    cout<<"===============================================";
+    cout<<"==================================================================";
     cout<<"\nEmpleado con mas ventas\n";
     cout<<"Numero: "<<EMPLEADOS[max].num<<endl;
     cout<<"Nombre: "<<EMPLEADOS[max].nom<<endl;
+
+    cout<<"==================================================================";
+    cout<<"\nEmpleados con ventas menores a 30 en diciembre:\n";
+    for (int i=0; i<n; i++) {
+        if (EMPLEADOS[i].ven[11]<30) {
+        cout<<"Numero: "<<EMPLEADOS[i].num<<" || Nombre: "<<EMPLEADOS[i].nom<<" || Venta que tuvo en diciembre: "<<EMPLEADOS[i].ven[11]<<endl;
+        }
+    }
 
     return 0;
 }
