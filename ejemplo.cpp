@@ -40,6 +40,9 @@ int main () {
             ventasmax=totalVentas;
             max=i;
         }
+        if (totalVentas>100) {
+            EMPLEADOS[i].sal*=1.10;
+        }
         cout<<"===============================================\n";
         cout<<"Empleado: "<<EMPLEADOS[i].nom<<endl;
         cout<<"Ventas mensuales: ";
