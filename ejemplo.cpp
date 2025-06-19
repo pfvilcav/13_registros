@@ -26,12 +26,21 @@ int main () {
         cin>>EMPLEADOS[i].sal;
     }
 
+    int max=0;
+    float ventasmax=0;
+    
+    cout<<"===============================================";
     cout<<"\nINFORMACION DE EMPLEADOS:\n";
     for (int i=0; i<n; i++) {
         float totalVentas = 0;
         for (int j=0; j<12; j++) {
             totalVentas += EMPLEADOS[i].ven[j];
         }
+        if (totalVentas>ventasmax) {
+            ventasmax=totalVentas;
+            max=i;
+        }
+        cout<<"===============================================\n";
         cout<<"Empleado: "<<EMPLEADOS[i].nom<<endl;
         cout<<"Ventas mensuales: ";
         for (int j=0; j<12; j++) {
@@ -40,6 +49,10 @@ int main () {
         cout<<"\nTotal ventas: "<<totalVentas<<endl;
         cout<<"Salario recibido: "<<EMPLEADOS[i].sal<<endl;
     }
+    cout<<"===============================================";
+    cout<<"\nEmpleado con mas ventas\n";
+    cout<<"Numero: "<<EMPLEADOS[max].num<<endl;
+    cout<<"Nombre: "<<EMPLEADOS[max].nom<<endl;
 
     return 0;
 }
