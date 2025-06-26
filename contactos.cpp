@@ -19,7 +19,7 @@ void imprimeContacto(contactoEmail &);
 
 int main(){
     int n, op;
-    string nom, user, domain;
+    string nom, user, domain, filtro;
     char sex;
     int edad;
     correo email;
@@ -30,6 +30,7 @@ int main(){
         cout<<"Menu de opciones -------------------------"<<endl;
         cout<<"1. Agregar contacto"<<endl;
         cout<<"2. Mostrar contactos"<<endl;
+        cout<<"3. Mostrar listado de contactos por dominio"<<endl;
         cout<<"0. Salir"<<endl;
         cout<<"Elige una opcion: "; cin>>op;
         switch(op){
@@ -56,6 +57,18 @@ int main(){
                     cout<<"Contacto #"<<i<<endl;
                     imprimeContacto(lista[i]);
                     cout<<endl;
+                }
+                system("pause");
+                break;
+            case 3:
+                cout<<"Ingrese el dominio a filtrar: "; 
+                cin>>filtro;
+                for (int i = 0; i < n; i++) {
+                    if (lista[i].email.domain==filtro) {
+                        cout<<"Contacto #"<<i+1<<endl;
+                        imprimeContacto(lista[i]);
+                        cout<<endl;
+                    }
                 }
                 system("pause");
                 break;
